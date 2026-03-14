@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Primary School Admissions | Application</title>
     <link rel="stylesheet" href="appForm.css" />
-    <script defer src="app.js"></script>
+    <script defer src="appForm.js"></script>
   </head>
   <body>
     <div class="page">
@@ -19,8 +19,7 @@
         </div>
         <nav class="nav">
           <a href="index.html" class="active">Application</a>
-          <a href="login.html">Login</a>
-          <a href="apply.html">Verify Parent</a>
+          <a href="inprogress.html">Check Status</a>
         </nav>
       </header>
 
@@ -226,7 +225,7 @@
                   </select>
                 </label>
                 <label>
-                  School location Search
+                  School location (GIS) search
                   <input type="text" name="gisSearch" id="gis-search" placeholder="Search by location or address" />
                   <button type="button" class="btn ghost small" id="share-location-school">Use my location</button>
                 </label>
@@ -295,15 +294,15 @@
                 </label>
                 <label>
                   Card number
-                  <input type="number" name="cardNumber" placeholder="0000 0000 0000 0000" />
+                  <input type="text" name="cardNumber" placeholder="0000 0000 0000 0000" />
                 </label>
                 <label>
                   Expiry date
-                  <input type="number" name="expiry" placeholder="MM/YY" />
+                  <input type="text" name="expiry" placeholder="MM/YY" />
                 </label>
                 <label>
                   CVV
-                  <input type="number" name="cvv" placeholder="123" />
+                  <input type="text" name="cvv" placeholder="123" />
                 </label>
               </div>
 
