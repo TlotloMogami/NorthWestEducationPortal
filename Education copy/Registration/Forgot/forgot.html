@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-page="forgot">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forgot Password | Admissions</title>
+    <link rel="stylesheet" href="forgot.css" />
+    <script defer src="forgot.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header compact">
+        <div class="brand">
+          <div class="crest">NW</div>
+          <div>
+            <h1>Reset Password</h1>
+            <p>We will send a reset link or OTP</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="home.html">Home</a>
+        </nav>
+      </header>
+
+      <main class="form-wrapper">
+        <form class="card" id="forgot-form">
+          <h2>Forgot your password?</h2>
+          <p class="lead">Enter your email or phone number to receive a reset link or OTP.</p>
+
+          <label>
+            Email or Phone
+            <input type="text" name="identifier" placeholder="Email or phone" required />
+          </label>
+
+          <button type="submit" class="btn">Send reset</button>
+          <p class="hint">We will contact you shortly with reset instructions.</p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

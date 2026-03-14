@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-page="teacher-dashboard">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teacher Dashboard | Allocate Tasks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboards.css" />
+    <script defer src="app.js"></script>
+    <script defer src="teacher.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="crest">NW</div>
+        <div>
+          <h1>Teacher Dashboard</h1>
+          <p>Allocate homework, quizzes, and assessments</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="home.html">Home</a>
+        <a href="teacher-dashboard.html" class="active">Teacher</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </header>
+
+    <main class="dash-page">
+      <section class="dash-hero">
+        <p class="eyebrow">Teaching Workspace</p>
+        <h1>Allocate learning tasks to classes</h1>
+        <p class="lead">
+          Create homework, quizzes, and assessments. Students will receive tasks immediately in their dashboard.
+        </p>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <span>Active Classes</span>
+          <strong id="teacher-classes">6</strong>
+          <p class="hint">Grades 7 to 12</p>
+        </article>
+        <article class="summary-card">
+          <span>Tasks Due This Week</span>
+          <strong id="teacher-due">--</strong>
+          <p class="hint">Based on current allocations</p>
+        </article>
+        <article class="summary-card">
+          <span>Pending Submissions</span>
+          <strong id="teacher-pending">--</strong>
+          <p class="hint">Awaiting student uploads</p>
+        </article>
+      </section>
+
+      <section class="dash-grid">
+        <article class="panel-card">
+          <h2>Create New Task</h2>
+          <form id="task-form" class="form-grid">
+            <div class="grid">
+              <label>
+                Task Title
+                <input type="text" name="title" required placeholder="e.g. Term 1 Quiz" />
+              </label>
+              <label>
+                Task Type
+                <select name="type" required>
+                  <option value="Homework">Homework</option>
+                  <option value="Quiz">Quiz</option>
+                  <option value="Assessment">Assessment</option>
+                </select>
+              </label>
+              <label>
+                Subject
+                <select name="subject" required>
+                  <option value="Technology">Technology</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Economics">Economics</option>
+                  <option value="Accounting">Accounting</option>
+                </select>
+              </label>
+              <label>
+                Grade
+                <select name="grade" required>
+                  <option value="Grade 7">Grade 7</option>
+                  <option value="Grade 8">Grade 8</option>
+                  <option value="Grade 9">Grade 9</option>
+                  <option value="Grade 10">Grade 10</option>
+                  <option value="Grade 11">Grade 11</option>
+                  <option value="Grade 12">Grade 12</option>
+                </select>
+              </label>
+              <label>
+                Class Group
+                <select name="classGroup" required>
+                  <option value="A">Class A</option>
+                  <option value="B">Class B</option>
+                  <option value="C">Class C</option>
+                </select>
+              </label>
+              <label>
+                Due Date
+                <input type="date" name="dueDate" required />
+              </label>
+              <label>
+                Points
+                <input type="number" name="points" min="10" max="100" value="50" required />
+              </label>
+            </div>
+            <label>
+              Instructions
+              <textarea name="instructions" rows="4" placeholder="Write clear task instructions." required></textarea>
+            </label>
+            <label class="upload-field">
+              Attach resources (optional)
+              <input type="file" name="attachment" />
+            </label>
+            <button type="submit" class="btn gradient">Publish Task</button>
+          </form>
+        </article>
+
+        <article class="panel-card">
+          <h2>Published Tasks</h2>
+          <div class="task-list" id="teacher-task-list"></div>
+        </article>
+      </section>
+
+      <section class="dash-grid">
+        <article class="panel-card">
+          <h2>Submission Tracking</h2>
+          <div id="submission-list" class="task-list"></div>
+        </article>
+        <article class="panel-card">
+          <h2>Reports</h2>
+          <p class="hint">Export task allocations for reporting or moderation.</p>
+          <div class="report-actions">
+            <button type="button" class="btn ghost" id="export-assignments">Download CSV</button>
+            <button type="button" class="btn gradient" id="export-summary">Download Summary</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-page="otp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OTP Confirmation | Admissions</title>
+    <link rel="stylesheet" href="otp.css" />
+    <script defer src="otp.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header compact">
+        <div class="brand">
+          <div class="crest">NW</div>
+          <div>
+            <h1>Confirm OTP</h1>
+            <p>Step 3 of 3</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="home.html">Home</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <main class="form-wrapper">
+        <form class="card" id="otp-form">
+          <h2>Enter the OTP</h2>
+          <p class="lead">We sent a 6-digit code to your phone and email.</p>
+
+          <label>
+            OTP Code
+            <input type="text" name="otp" maxlength="6" placeholder="123456" required />
+          </label>
+
+          <button type="submit" class="btn">Verify OTP</button>
+          <p class="hint">After verification you will be asked to login.</p>
+          <p class="hint" id="otp-hint"></p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

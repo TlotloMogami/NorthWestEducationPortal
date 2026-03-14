@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-page="student-dashboard">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Dashboard | Tasks & Timetable</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dashboards.css" />
+    <script defer src="app.js"></script>
+    <script defer src="student.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="crest">NW</div>
+        <div>
+          <h1>Student Dashboard</h1>
+          <p>View tasks, timetable, and reports</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="home.html">Home</a>
+        <a href="student-dashboard.html" class="active">Student</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </header>
+
+    <main class="dash-page">
+      <section class="dash-hero">
+        <p class="eyebrow">Learner Workspace</p>
+        <h1>Your learning tasks and timetable</h1>
+        <p class="lead">Check your upcoming homework, quizzes, and assessments. Submit directly online.</p>
+        <div class="grid">
+          <label>
+            Student Name
+            <input type="text" id="student-name" placeholder="e.g. Naledi Molefe" />
+          </label>
+          <label>
+            Grade
+            <select id="student-grade">
+              <option value="Grade 7">Grade 7</option>
+              <option value="Grade 8">Grade 8</option>
+              <option value="Grade 9">Grade 9</option>
+              <option value="Grade 10">Grade 10</option>
+              <option value="Grade 11">Grade 11</option>
+              <option value="Grade 12">Grade 12</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <span>Tasks Due This Week</span>
+          <strong id="student-due">--</strong>
+          <p class="hint">Based on your grade</p>
+        </article>
+        <article class="summary-card">
+          <span>Completed Tasks</span>
+          <strong id="student-complete">--</strong>
+          <p class="hint">Submissions on record</p>
+        </article>
+        <article class="summary-card">
+          <span>Average Score</span>
+          <strong id="student-average">--%</strong>
+          <p class="hint">Calculated from submissions</p>
+        </article>
+      </section>
+
+      <section class="dash-grid">
+        <article class="panel-card">
+          <h2>Upcoming Tasks</h2>
+          <div class="upcoming-list" id="upcoming-list"></div>
+        </article>
+        <article class="panel-card">
+          <h2>Weekly Timetable</h2>
+          <table class="timetable">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Time</th>
+                <th>Room</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>Technology</td>
+                <td>08:00 - 09:30</td>
+                <td>Lab 1</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>Biology</td>
+                <td>10:00 - 11:30</td>
+                <td>Room 4</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Economics</td>
+                <td>12:00 - 13:30</td>
+                <td>Room 2</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>Accounting</td>
+                <td>08:00 - 09:30</td>
+                <td>Room 6</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>Revision</td>
+                <td>10:00 - 11:00</td>
+                <td>Library</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section class="dash-grid">
+        <article class="panel-card">
+          <h2>Your Tasks</h2>
+          <div class="task-list" id="student-task-list"></div>
+        </article>
+        <article class="panel-card">
+          <h2>Reports</h2>
+          <p class="hint">Download your performance report and submissions summary.</p>
+          <div class="report-actions">
+            <button type="button" class="btn ghost" id="download-report">Download Report</button>
+            <button type="button" class="btn gradient" id="download-submissions">Download Submissions</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

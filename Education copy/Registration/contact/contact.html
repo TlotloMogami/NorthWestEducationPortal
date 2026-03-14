@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-page="contact">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Details | Admissions</title>
+    <link rel="stylesheet" href="contact.css" />
+    <script defer src="contact.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header compact">
+        <div class="brand">
+          <div class="crest">NW</div>
+          <div>
+            <h1>Contact Verification</h1>
+            <p>Step 2 of 3</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="home.html">Home</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <main class="form-wrapper">
+        <form class="card" id="contact-form">
+          <h2>Provide contact details</h2>
+          <p class="lead">Enter your email, password, and South African phone number.</p>
+
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="e.g. parent@email.com" required />
+          </label>
+          <label>
+            Retype Email Address
+            <input type="email" name="confirmEmail" placeholder="Repeat email" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="Create a password" required />
+          </label>
+          <label>
+            South African Phone Number
+            <input
+              type="tel"
+              name="phone"
+              placeholder="e.g. 071 234 5678"
+              inputmode="numeric"
+              maxlength="10"
+              pattern="\\d{10}"
+              required
+            />
+          </label>
+
+          <button type="submit" class="btn">Submit</button>
+          <p class="hint">An OTP will be sent to your phone and email for confirmation.</p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

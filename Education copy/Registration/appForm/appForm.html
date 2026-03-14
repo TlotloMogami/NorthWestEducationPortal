@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-page="application">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Primary School Admissions | Application</title>
+    <link rel="stylesheet" href="appForm.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="crest">NW</div>
+          <div>
+            <h1>North West Education Department</h1>
+            <p>Primary School Admissions Application</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="active">Application</a>
+          <a href="login.html">Login</a>
+          <a href="apply.html">Verify Parent</a>
+        </nav>
+      </header>
+
+      <main class="wizard-wrapper">
+        <section class="wizard-intro">
+          <p class="eyebrow">Application Form System</p>
+          <h2>New Application Form</h2>
+          <p class="lead">
+            Complete the step-by-step wizard to submit a primary school application. All fields marked with * are required.
+          </p>
+        </section>
+
+        <section class="wizard-card">
+          <div class="wizard-progress">
+            <div class="progress-bar">
+              <span id="wizard-progress"></span>
+            </div>
+            <div class="wizard-steps" id="wizard-steps">
+              <span class="step active">1. Child Information</span>
+              <span class="step">2. Parent / Guardian</span>
+              <span class="step">3. Address</span>
+              <span class="step">4. School Selection</span>
+              <span class="step">5. Upload Documents</span>
+              <span class="step">6. Payment &amp; Validation</span>
+            </div>
+          </div>
+
+          <form class="wizard-form" id="application-form" novalidate>
+            <div class="wizard-panel active" data-step="1">
+              <h3>Step 1: Child Information</h3>
+              <div class="form-grid">
+                <label>
+                  Child first name *
+                  <input type="text" name="childFirstName" placeholder="e.g. Neo" required />
+                </label>
+                <label>
+                  Child surname *
+                  <input type="text" name="childSurname" placeholder="e.g. Molefe" required />
+                </label>
+                <label>
+                  Date of birth *
+                  <input type="date" name="childDob" required />
+                </label>
+                <label>
+                  Gender *
+                  <select name="childGender" required>
+                    <option value="">Select</option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label>
+                  Grade applying for *
+                  <select name="childGrade" id="grade-select" required>
+                    <option value="">Select grade</option>
+                    <option value="0">Grade R</option>
+                    <option value="1">Grade 1</option>
+                    <option value="2">Grade 2</option>
+                    <option value="3">Grade 3</option>
+                    <option value="4">Grade 4</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                  </select>
+                </label>
+                <label>
+                  Child ID number (optional)
+                  <input
+                    type="text"
+                    name="childId"
+                    placeholder="13-digit ID if available"
+                    inputmode="numeric"
+                    maxlength="13"
+                    pattern="\\d{13}"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="wizard-panel" data-step="2">
+              <h3>Step 2: Parent / Guardian Information</h3>
+              <div class="form-grid">
+                <label>
+                  Title *
+                  <select name="parentTitle" required>
+                    <option value="">Select</option>
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Ms</option>
+                    <option>Dr</option>
+                  </select>
+                </label>
+                <label>
+                  Parent first name *
+                  <input type="text" name="parentFirstName" placeholder="e.g. Lerato" required />
+                </label>
+                <label>
+                  Parent surname *
+                  <input type="text" name="parentSurname" placeholder="e.g. Molefe" required />
+                </label>
+                <label>
+                  Parent ID number *
+                  <input
+                    type="text"
+                    name="parentId"
+                    placeholder="13-digit South African ID"
+                    inputmode="numeric"
+                    maxlength="13"
+                    pattern="\\d{13}"
+                    required
+                  />
+                </label>
+                <label>
+                  Contact number *
+                  <input
+                    type="tel"
+                    name="parentContact"
+                    placeholder="e.g. 071 234 5678"
+                    inputmode="numeric"
+                    maxlength="10"
+                    pattern="\\d{10}"
+                    required
+                  />
+                </label>
+                <label>
+                  Email address *
+                  <input type="email" name="parentEmail" placeholder="parent@email.com" required />
+                </label>
+                <label>
+                  Relationship to child *
+                  <input type="text" name="relationship" placeholder="e.g. Mother" required />
+                </label>
+                <label>
+                  Occupation
+                  <input type="text" name="occupation" placeholder="Optional" />
+                </label>
+              </div>
+            </div>
+
+            <div class="wizard-panel" data-step="3">
+              <h3>Step 3: Address Information</h3>
+              <div class="form-grid">
+                <label>
+                  Residential address *
+                  <input type="text" name="address" placeholder="Street, suburb" required />
+                </label>
+                <label>
+                  GPS location (optional)
+                  <input type="text" name="gps" id="gps-input" placeholder="Latitude, Longitude" />
+                  <button type="button" class="btn ghost small" id="share-location">Share location</button>
+                </label>
+                <label>
+                  Municipality *
+                  <input type="text" name="municipality" placeholder="e.g. Mahikeng" required />
+                </label>
+                <label>
+                  Postal code *
+                  <input
+                    type="text"
+                    name="postal"
+                    placeholder="e.g. 2745"
+                    inputmode="numeric"
+                    maxlength="4"
+                    pattern="\\d{4}"
+                    required
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="wizard-panel" data-step="4">
+              <h3>Step 4: School Selection</h3>
+              <div class="form-grid">
+                <label>
+                  Province *
+                  <select name="province" required>
+                    <option value="">Select</option>
+                    <option>North West</option>
+                    <option>Gauteng</option>
+                    <option>Free State</option>
+                    <option>Limpopo</option>
+                  </select>
+                </label>
+                <label>
+                  District *
+                  <select name="district" id="district-select" required>
+                    <option value="">Select</option>
+                    <option>Dr Kenneth Kaunda</option>
+                    <option>Dr Ruth Segomotsi Mompati</option>
+                    <option>Ngaka Modiri Molema</option>
+                  </select>
+                </label>
+                <label>
+                  Municipality *
+                  <select name="municipalitySelect" id="municipality-select" required>
+                    <option value="">Select municipality</option>
+                  </select>
+                </label>
+                <label>
+                  School location (GIS) search
+                  <input type="text" name="gisSearch" id="gis-search" placeholder="Search by location or address" />
+                  <button type="button" class="btn ghost small" id="share-location-school">Use my location</button>
+                </label>
+                <label>
+                  Preferred school *
+                  <select name="school1" id="school-choice-1" required>
+                    <option value="">Select school</option>
+                  </select>
+                </label>
+                <label>
+                  Second choice
+                  <select name="school2" id="school-choice-2">
+                    <option value="">Select school</option>
+                  </select>
+                </label>
+                <label>
+                  Third choice
+                  <select name="school3" id="school-choice-3">
+                    <option value="">Select school</option>
+                  </select>
+                </label>
+              </div>
+              <p class="hint" id="school-type-hint">School options will update based on the grade selected.</p>
+            </div>
+
+            <div class="wizard-panel" data-step="5">
+              <h3>Step 5: Upload Documents</h3>
+              <p class="lead">Upload clear, certified copies. Accepted formats: PDF, JPG, PNG.</p>
+              <div class="form-grid">
+                <label class="upload-box">
+                  Drag &amp; drop or click to upload
+                  <input type="file" id="documents-input" multiple accept=".pdf,.jpg,.jpeg,.png" />
+                </label>
+                <div class="required-list">
+                  <h4>Required documents</h4>
+                  <ul>
+                    <li>Child’s report</li>
+                    <li>Birth certificate</li>
+                    <li>Proof of address</li>
+                    <li>Medical certificate</li>
+                    <li>Both parents’ certified ID</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="documents-list" class="upload-list"></div>
+            </div>
+
+            <div class="wizard-panel" data-step="6">
+              <h3>Step 6: Payment &amp; Validation</h3>
+              <p class="lead">Admission fee: R50. Pay online or request a reference pin for office payment.</p>
+              <div class="payment-options">
+                <label class="radio-card">
+                  <input type="radio" name="paymentMethod" value="online" checked />
+                  <span>Pay online</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="paymentMethod" value="pin" />
+                  <span>Request reference pin</span>
+                </label>
+              </div>
+
+              <div id="online-fields" class="form-grid">
+                <label>
+                  Cardholder name
+                  <input type="text" name="cardName" placeholder="e.g. Thandi Molefe" />
+                </label>
+                <label>
+                  Card number
+                  <input type="text" name="cardNumber" placeholder="0000 0000 0000 0000" />
+                </label>
+                <label>
+                  Expiry date
+                  <input type="text" name="expiry" placeholder="MM/YY" />
+                </label>
+                <label>
+                  CVV
+                  <input type="text" name="cvv" placeholder="123" />
+                </label>
+              </div>
+
+              <div id="pin-fields" class="pin-box">
+                <p>Generate a reference pin to pay at the office.</p>
+                <button type="button" class="btn ghost" id="generate-pin">Generate Pin</button>
+                <p class="hint" id="pin-display"></p>
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn ghost" id="wizard-prev">Back</button>
+              <button type="button" class="btn" id="wizard-next">Next</button>
+              <button type="submit" class="btn" id="wizard-submit">Validate &amp; Submit</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Privacy Policy | Terms | Department Contact</p>
+        <p>North West Provincial Government</p>
+      </footer>
+    </div>
+  </body>
+</html>
